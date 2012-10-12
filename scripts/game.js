@@ -9,6 +9,7 @@ var RocknCoder = RocknCoder || {};
 (function () {
     "use strict";
 
+    RocknCoder.IntervalId = null;
     /* holds all of the sprites to be displayed on the screen */
     RocknCoder.SpriteMap = {};
     /* holds all of the important game variables */
@@ -58,17 +59,17 @@ var RocknCoder = RocknCoder || {};
             };
 
         /* if anything flips this bit to false, the level is considered done */
+        RocknCoder.Game.level = 0;
         RocknCoder.Game.lives = 3;
         RocknCoder.Game.playing = true;
         RocknCoder.InitExplosion();
 
         /* this is the actual game loop */
-        intervalId = setInterval(function() {
+        RocknCoder.IntervalId = setInterval(function() {
             var ndx, inner, sm, sprite, sprite2, rect1, rect2;
             /* clear the canvas */
             canvas.width = canvas.width;
             fastMatrix = [];
-//            fastMatrix.push(null);
             if(init) {
                 init = false;
                 RocknCoder.SpriteMap = {};
@@ -112,7 +113,7 @@ var RocknCoder = RocknCoder || {};
                         for(inner = fastMatrix.length; inner; inner -= 1) {
                             sprite2 = fastMatrix[inner - 1];
 
-                            if(sprite2.type === RocknCoder.SpriteTypes.PLAYER_BULLET) {
+                            if(sprite2.type === RocknCoder.SpriteTypes.PLAYER_BULLET && !sprite2.killed) {
                                 rect2 = calcRect(sprite2);
                                 if(rectanglesCollide(rect1, rect2)) {
                                     sprite.killed = true;
@@ -134,7 +135,8 @@ var RocknCoder = RocknCoder || {};
                     init = true;
                 } else {
                     /* stop the timer */
-                    clearInterval(intervalId);
+                    clearInterval(RocknCoder.IntervalId);
+                    RocknCoder.IntervalId = null;
                     $.mobile.changePage("#attract");
                 }
             }

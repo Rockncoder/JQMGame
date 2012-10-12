@@ -70,6 +70,7 @@ var RocknCoder = RocknCoder || {};
             },
             pagehide = function () {
                 RocknCoder.Game.spriteSheet = null;
+                if(RocknCoder.IntervalId){ clearInterval(RocknCoder.IntervalId);}
            };
         return {
             pageshow: pageshow,
