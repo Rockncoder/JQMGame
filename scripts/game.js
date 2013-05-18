@@ -28,7 +28,6 @@ var RocknCoder = RocknCoder || {};
         NPC_BULLET: 3
     };
 
-
     RocknCoder.GameLoop = (function (canvas) {
         var spriteImg = RocknCoder.Game.spriteSheet,
             init = true,
@@ -288,11 +287,11 @@ var RocknCoder = RocknCoder || {};
         };
     });
 
-
     RocknCoder.Levels = {
         0: {
             npcs: [
                 [50, 50, "flyDown"],
+                [250, 50, "flyDown"],
                 [100, 50, "spinAround"],
                 [150, 50, "doNothing"]
             ]

@@ -1,4 +1,9 @@
-﻿
+﻿/**
+ * User: Troy
+ * Date: 05/14/13
+ * Time: 5:30 AM
+ */
+
 var RocknCoder = RocknCoder || {};
 
 (function () {
@@ -16,7 +21,7 @@ var RocknCoder = RocknCoder || {};
     RocknCoder.CurrentState = RocknCoder.States.Splash;
     RocknCoder.CurrentLevel = 0;
 
-	// put the page events into one string
+	/* put the page events into one string */
 	var Events = "pagebeforeshow pageshow pagebeforechange pagechange pagebeforehide pagehide",
 		// the kernel remains unchanged
 		Kernel = function (event) {
@@ -28,15 +33,12 @@ var RocknCoder = RocknCoder || {};
 			}
 		};
 
-	// anonymous function which binds to the page's events
+	/* anonymous function which binds to the page's events */
 	(function () {
-		$("div[data-rnc-jspage]").on(
-			Events,
-			Kernel
-		);
+		$("div[data-rnc-jspage]").on(Events, Kernel);
 	}());
 
-	// anonymous function which binds to the document's pageload event
+	/* anonymous function which binds to the document's pageload event */
 	(function () {
 		$(document).bind(
 			'pageload',
@@ -51,22 +53,21 @@ var RocknCoder = RocknCoder || {};
 		);
 	}());
 
-	// size the content area
+	/* size the content area */
 	RocknCoder.Dimensions = (function () {
-		var get = function () {
-			var isFirstPass = false,
-				isIPhone = (/iphone/gi).test(navigator.appVersion),
-				width = $(window).width(),
-				height = $(window).height() + (isIPhone ?  60 : 0),
-				hHeight = $('header').outerHeight(),
-				fHeight = $('footer').outerHeight();
-			return {
-				width: width,
-				height: height - hHeight - fHeight
-			};
-		};
 		return {
-			get: get
+			get: function () {
+        var isFirstPass = false,
+          isIPhone = (/iphone/gi).test(navigator.appVersion),
+          width = $(window).width(),
+          height = $(window).height() + (isIPhone ?  60 : 0),
+          hHeight = $('header').outerHeight(),
+          fHeight = $('footer').outerHeight();
+        return {
+          width: width,
+          height: height - hHeight - fHeight
+        };
+      }
 		};
 	}());
 }());
