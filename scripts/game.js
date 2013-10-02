@@ -273,7 +273,12 @@ var RocknCoder = RocknCoder || {};
         xTarget = x;
       } else {
         /* shoot */
-        RocknCoder.SpriteMap[bulletName] = new Sprite(RocknCoder.SpriteTypes.PLAYER_BULLET, 4, 202, 32, 32, player.xPos + player.halfWidth - 16, player.yPos, 0, moves.flyBullet, bulletName);
+        RocknCoder.SpriteMap[bulletName] = new Sprite(RocknCoder.SpriteTypes.PLAYER_BULLET,
+          4, 202, 32, 32,
+          player.xPos + player.halfWidth - 16,
+          player.yPos, 0,
+          moves.flyBullet,
+          bulletName);
         bullet++;
       }
     });
@@ -306,9 +311,9 @@ var RocknCoder = RocknCoder || {};
     },
     1: {
       npcs: [
-        [50, 50, "spinAround"],
-        [100, 50, "flyDown"],
-        [150, 50, "spinAround"]
+        [50, 50, "flyDown"],
+        [100, 50, "spinAround"],
+        [150, 50, "flyDown"]
       ]
     }
   };

@@ -23,7 +23,7 @@ var RocknCoder = RocknCoder || {};
 
 	/* put the page events into one string */
 	var Events = "pagebeforeshow pageshow pagebeforechange pagechange pagebeforehide pagehide",
-		// the kernel remains unchanged
+		/* the kernel remains unchanged */
 		Kernel = function (event) {
 			var that = this,
 				eventType = event.type,
@@ -45,9 +45,9 @@ var RocknCoder = RocknCoder || {};
 			function (event, obj) {
 				console.log("pageload");
 				$("div[data-rnc-jspage]")
-					// to make sure we aren't double hooking events clear them all
+					/* to make sure we aren't double hooking events clear them all */
 					.off(Events)
-					// then hook them all  (the newly loaded page is in DOM at this point)
+					/* then hook them all  (the newly loaded page is in DOM at this point) */
 					.on(Events, Kernel);
 			}
 		);
