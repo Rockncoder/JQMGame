@@ -67,6 +67,7 @@ var RocknCoder = RocknCoder || {};
       var ndx, inner, sm, sprite, sprite2, rect1, rect2;
       /* clears the canvas */
       canvas.width = canvas.width;
+
       fastMatrix = [];
       if (init) {
         init = false;
@@ -262,6 +263,8 @@ var RocknCoder = RocknCoder || {};
       var bulletName = "playerBullet" + bullet,
         x = event.pageX,
         y = event.pageY;
+
+      /* this is an important performance boost */
       event.preventDefault();
 
       if (event.type === 'touchstart') {
