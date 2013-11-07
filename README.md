@@ -1,2 +1,2 @@
-JQMGame
-A tutorial on building HTML5 Mobile Games from scratch.
+deferred1
+A quick tutorial on JavaScript Deferred objects in jQuery

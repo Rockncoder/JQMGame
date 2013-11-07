@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>JQM Game</title>
+  <title>Deferred1</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -30,7 +30,7 @@
 <body>
 <!-- splash screen -->
 <div id="splash" data-role="page" data-rnc-jspage="splash">
-  <div>1942!</div>
+  <h1>Deferred Objects Splash</h1>
 </div>
 <!-- attract screen -->
 <div id="attract" data-role="page" data-rnc-jspage="attract" data-theme="e">
@@ -43,9 +43,9 @@
 </div>
 <!-- play screen -->
 <div id="play" data-role="page" data-rnc-jspage="play" data-theme="a">
-  <canvas id="grid" width="300" height="300" style="position: relative;">
-    <strong>[Your browser can not show this example.]</strong>
-  </canvas>
+  <ul>
+    <li><a href="#attract" data-role="button">Return</a></li>
+  </ul>
 </div>
 <!-- high scores screen -->
 <div id="highScores" data-role="page" data-rnc-jspage="info" data-theme="e">
@@ -57,21 +57,12 @@
 <!-- credits screen -->
 <div id="credits" data-role="page" data-rnc-jspage="info" data-theme="e">
   <br/>
-  <ul data-role="listview">
-    <li data-role="list-divider"><span>JQM Game</span></li>
-    <li>
-      <span>Designed and developed by</span><br/>
-      <span>the RocknCoder</span><br/>
-      <span>(Troy Miles)</span>
-    </li>
-    <li data-role="list-divider"><span></span></li>
+  <ul>
+    <li><a href="#attract" data-role="button">Return</a></li>
   </ul>
-  <a href="#attract" data-role="button">Return</a>
 </div>
 
 <script src="scripts/app.js" type="text/javascript"></script>
-<script src="scripts/sprite.js" type="text/javascript"></script>
-<script src="scripts/game.js" type="text/javascript"></script>
 <script src="scripts/pages.js" type="text/javascript"></script>
 </body>
 </html>

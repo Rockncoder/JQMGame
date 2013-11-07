@@ -57,8 +57,9 @@ var RocknCoder = RocknCoder || {};
 	RocknCoder.Dimensions = (function () {
 		return {
 			get: function () {
+//        isIPhone = false, (/iphone/gi).test(navigator.appVersion),
         var isFirstPass = false,
-          isIPhone = (/iphone/gi).test(navigator.appVersion),
+          isIPhone = false,
           width = $(window).width(),
           height = $(window).height() + (isIPhone ?  60 : 0),
           hHeight = $('header').outerHeight(),
